@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeBoard</title>
+    <title>Embsys AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="assets/embsys_logo_favicon.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -17,7 +18,8 @@
     <div class="page-wrapper">
       <nav class="main-nav">
         <div class="container nav-container">
-          <h1 class="logo">CodeBoard.</h1>
+          <img src="assets/embsys_nav_logo.svg" alt="Logo" style="width: 14%;">
+          <!-- <div class="logo">Embsys <span>Ai</span></div> -->
           <button id="theme-toggle" class="theme-toggle-button">
             <span class="material-symbols-rounded light">clear_day</span>
             <span class="material-symbols-rounded dark">dark_mode</span>
@@ -25,25 +27,23 @@
         </div>
       </nav>
 
-      <!-- End of navbar -->
-
       <header class="hero">
         <div class="container hero-container">
           <div class="hero-content">
-            <span class="hero-tagline">AI-Driven Vigilance for Precious Assets</span>
-            <h2>CodeBoard <br>AI for code quality inspection.</h2>
+            <!-- <span class="hero-tagline">AI-Driven Vigilance for Precious Assets</span> -->
+            <h2>Embsys AI – ready-to-use AI-based visual<br>inspection</h2>
             <p class="subtitle">
-              CodeBoard is an AI-powered automated surveillance system designed to monitor and inspect environments with high precision. Built for advanced security needs, it excels in asset protection—including gold—using real-time intelligence and seamless integration!
+              Embsys AI enables out-of-the-box visual quality inspection and requires no expertise in vision solutions or AI. It allows you to get started quickly and easily up to the most demanding use cases. Inspekto is easy to deploy and use, scalable, and provides the necessary connectivity to existing automation systems.
             </p>
-            <a href="#signup" class="cta-button hero-cta">
+            <!-- <a href="#signup" class="cta-button hero-cta">
               Be the First to Experience Smarter Surveillance
-            </a>
+            </a> -->
           </div>
 
           <div class="hero-image-container">
             <div class="hero-image-bg-shape"></div>
             <img
-              src="assets/hero_front.png"
+              src="assets/embsys_hero.svg"
               alt="CodeBoard"
               class="hero-main-image"
             />
@@ -51,19 +51,49 @@
         </div>
       </header>
 
+      
+      <!-- Benefits Section -->
+      <section class="benefits">
+        <div class="container">
+          <div class="section-header">
+            <span>How product works?</span>
+            <h2>Benefits at a Glance!</h2>
+          </div>
+          
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-header">
+                <img
+                src="assets/embsys_benefits.svg"
+                alt="Animation" style="width: 510px; height: 371px;"
+                />
+                <div>
+                  <p class="benefit-role">Embsys AI at a glance: An AI analyses the images captured by the electro-optical system and identifies defects and anomalies.</p>
+                </div>
+              </div>
+              
+              <div class="benefit-quote">
+                <span>Highly affordable and immediate to deploy industrial visual inspection</span><br><br>
+                The Embsys AI system combines a unique electro-optical system with innovative AI technology to provide a visual quality inspection solution that is versatile, extremely easy to use, adapts to changes in the production line, and requires no machine vision expertise. Only 20 to 30 good samples are required. Bad samples are optional, not mandatory. The system can be installed on the production line, either end-of-line or mid-line, and fully integrated with PLC or MES/ERP systems. This makes it great for the inspection of incoming goods or the final quality inspection of finished products.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <!-- Setup Section -->
-      <section class="features">
+      <section class="setups">
         <div class="container">
           <div class="section-header">
             <span>3-Step</span>
             <h2>Setup Process</h2>
           </div>
       
-          <div class="features-layout">
-            <div class="feature-item">
-              <div class="feature-icon"><span class="material-symbols-rounded">timer_1</span></div>
-              <img src="assets/usage.png" alt="Usage" style="width: 70%;">
-              <div class="feature-text">
+          <div class="setups-layout">
+            <div class="setup-item">
+              <div class="setup-icon"><span class="material-symbols-rounded">timer_1</span></div>
+              <img src="assets/unbox.png" alt="Usage" style="width: 70%;">
+              <div class="setup-text">
                   <h3>Unbox</h3>
                   <p>
                       Unboxing is as easy as unpacking your groceries: open the box and take out the parts. On to the next step!
@@ -71,10 +101,10 @@
                 </div>
             </div>
             
-            <div class="feature-item">
-                <div class="feature-icon"><span class="material-symbols-rounded">timer_2</span></div>
+            <div class="setup-item">
+                <div class="setup-icon"><span class="material-symbols-rounded">timer_2</span></div>
                 <img src="assets/mount.png" alt="Mount" style="width: 70%;">
-                <div class="feature-text">
+                <div class="setup-text">
                     <h3>Mount in place</h3>
                     <p>
                         Mount in place It doesn't take long to set up the camera. You can set it up as a stand-alone inspection station to support multiple lines or for manual handling, 
@@ -83,10 +113,10 @@
                 </div>
             </div>
             
-            <div class="feature-item">
-                <div class="feature-icon"><span class="material-symbols-rounded">timer_3</span></div>
+            <div class="setup-item">
+                <div class="setup-icon"><span class="material-symbols-rounded">timer_3</span></div>
                 <img src="assets/ready.png" alt="Ready" style="width: 70%;">
-              <div class="feature-text">
+              <div class="setup-text">
                 <h3>Ready to use</h3>
                 <p>
                   Connect the components and train AI with 20 good sample of your goods. If necessary, the system can easily adapted to changes.
@@ -98,49 +128,20 @@
         </div>
       </section>
 
-      <!-- Benefits Section -->
-      <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-              <span>How product works?</span>
-              <h2>Benefits at a Glance!</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                    <img
-                    src="assets/animation.png"
-                    alt="Animation" style="width: 510px; height: 371px;"
-                    />
-                    <div>
-                        <p class="testimonial-role">CodeBoard at a glance: An AI analyses the images captured by the electro-optical system and identifies defects and anomalies.</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-quote">
-                    <span>Highly affordable and immediate to deploy industrial visual inspection</span><br><br>
-                    The CodeBoard system combines a unique electro-optical system with innovative AI technology to provide a visual quality inspection solution that is versatile, extremely easy to use, adapts to changes in the production line, and requires no machine vision expertise. Only 20 to 30 good samples are required. Bad samples are optional, not mandatory. The system can be installed on the production line, either end-of-line or mid-line, and fully integrated with PLC or MES/ERP systems. This makes it great for the inspection of incoming goods or the final quality inspection of finished products.
-                </div>
-            </div>
-        </div>
-    </div>
-        </section>
-
       <!-- Features Section -->
-      <section class="how-it-works">
+      <section class="features">
         <div class="container">
           <div class="section-header">
             <span>Key Features</span>
             <h2>Summary</h2>
           </div>
 
-          <div class="timeline">
-                <div class="timeline-item">
+          <div class="feature">
+                <div class="feature-item">
                     <p>Upto</p>
                     <center><img src="assets/feature1.png" alt="" style="width: 80%;"></center>
                     <p>faster deployment</p>
-                    <div class="timeline-content">
+                    <div class="feature-content">
                       <h3>Immediate</h3>
                       <ul>
                         <li>System ready to deploy</li>
@@ -148,11 +149,11 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="timeline-item">
+                  <div class="feature-item">
                     <p>Upto</p>
                     <center><img src="assets/feature2.png" alt="" style="width: 80%;"></center>
                     <p>experts needed</p>
-                    <div class="timeline-content">
+                    <div class="feature-content">
                       <h3>Easy to use</h3>
                       <ul>
                         <li>No machine vision expertise needed</li>
@@ -161,11 +162,11 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="timeline-item">
+                  <div class="feature-item">
                     <p>Upto</p>
                     <center><img src="assets/feature3.png" alt="" style="width: 80%;"></center>
                     <p>Lower TCO</p>
-                    <div class="timeline-content">
+                    <div class="feature-content">
                       <h3>Affordable</h3>
                       <ul>
                         <li>Low Total cost of ownership</li>
@@ -173,11 +174,11 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="timeline-item">
+                  <div class="feature-item">
                     <p>Less than</p>
                     <center><img src="assets/feature4.png" alt="" style="width: 80%;"></center>
                     <p>for go/no go decisions</p>
-                <div class="timeline-content">
+                <div class="feature-content">
                     <h3>Risk Free</h3>
                     <ul>
                         <li>Quick use case verification</li>
@@ -186,6 +187,115 @@
                 </div>
                 </div>
           </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Don't Just Automate Section -->
+       <section class="automate">
+        <div class="container">
+          <div class="section-header">
+            <span>Don't Just Automate</span>
+            <h2>Simply with Embsys Intelligence</h2>
+          </div>
+
+          <div class="auto">
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto1.svg" alt="" style="width: 80%;">
+              </div>
+              
+              <div class="auto-content">
+                <h3>Deploy<br>faster</h3>
+                <p>
+                  with easy-to-setup hardware, ready-made tools and hardware-agnostic software
+                </p>
+              </div>
+            </div>
+
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto2.svg" alt="" style="width: 80%;">
+              </div>
+              
+              <div class="auto-content">
+                <h3>Cut training time dramatically</h3>
+                <p>
+                  with intuitive software backed by online training and suport platforms for on-demand guidance
+                </p>
+              </div>
+            </div>
+            
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto3.svg" alt="" style="width: 80%;">
+              </div>
+
+              <div class="auto-content">
+                <h3>Speed up<br>decision making</h3>
+                <p>
+                  via instant feedback on image analyses and processing operations
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="auto">
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto4.svg" alt="" style="width: 80%;">
+              </div>
+              
+              <div class="auto-content">
+                <h3>Solve applications<br>quicker</h3>
+                <p>
+                  thanks to integrated tools, a flowchart-based development environment and handy utilities - all designed to shorten ramp-up time
+                </p>
+              </div>
+            </div>
+
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto5.svg" alt="" style="width: 80%;">
+              </div>
+              
+              <div class="auto-content">
+                <h3>Customize<br>as needed</h3>
+                <p>
+                  with our leading netwoek of OEMs, machine builders, distributors and system integrators
+                </p>
+              </div>
+            </div>
+            
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto6.svg" alt="" style="width: 80%;">
+              </div>
+
+              <div class="auto-content">
+                <h3>Leverage an extensive library of tools</h3>
+                <p>
+                  to quickly generate applications
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="auto">
+            <div class="auto-item">
+              <div class="auto-icon">
+                <img src="assets/auto7.svg" alt="" style="width: 80%;">
+              </div>
+              
+              <div class="auto-content">
+                <h3>Interoperable, expandable, licensing options</h3>
+                <p>
+                  keep costs low and production in step with demand
+                </p>
+              </div>
+            </div>
+
+            </div>
           </div>
         </div>
       </section>

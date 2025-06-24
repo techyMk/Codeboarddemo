@@ -1027,24 +1027,31 @@ body.dark-mode .theme-toggle-button .dark {
   transition: background-color var(--transition-speed) ease;
 }
 
-.workflow-section {
-  display: grid;
-  grid-template-columns: 1fr, 1fr;
-  align-items: center;
+.workflow .gif {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-.img-box {
-  height: 800px;
+.workflow-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.workflow-card {
+  width: 100%;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  border-right: 5px solid var(--primary-color);
+  transition: background-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
   overflow: hidden;
-}
-
-.img {
-  width: 50%;
-  height: 50%;
-}
-
-.content-box {
-  padding-inline: 10em;
 }
 
 /* ==== Footer ==== */

@@ -246,14 +246,59 @@ body.dark-mode .theme-toggle-button .dark {
 /* ==== Slides Section ==== */
 
 .slide {
+  position: relative;
   padding: 0;
   margin: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
   align-items: center;
   background: var(--bg-color);
+  z-index: 1;
+}
+
+.pulse-bg {
+  opacity: 0.15;
+  position: absolute;
+  background-color: var(--section-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background:  var(--primary-color);
+  border-radius: 50%;
+  animation: pulse 2s linear infinite;
+  position: absolute;
+}
+
+.circle:nth-child(1) {
+  animation-delay: 0;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.circle:nth-child(4) {
+  animation: none;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
 }
 
 .static{
@@ -269,7 +314,7 @@ body.dark-mode .theme-toggle-button .dark {
   color: var(--text-color);
   line-height: 2rem;
   text-align: center;
-  margin-top: -10rem;
+  margin-top: -12rem;
 }
 
 .head-text p {
@@ -321,7 +366,7 @@ body.dark-mode .theme-toggle-button .dark {
   width: 40vw;
   height: 40vh;
   /* object-fit: contain; */
-  margin-bottom: 4rem;
+  margin-bottom: 5.5rem;
 }
 
 .slider-container {
@@ -1146,14 +1191,21 @@ body.dark-mode .theme-toggle-button .dark {
   padding: 1.5rem;
   box-shadow: var(--card-shadow);
   border-radius: var(--border-radius);
-  border-right: 5px solid var(--primary-color);
+  /* border-right: 5px solid var(--primary-color);
+  border-top: 5px solid var(--primary-color); */
   transition: background-color var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
+  box-shadow var(--transition-speed) ease;
   display: flex;
   gap: 1.5rem;
   justify-content: center;
   overflow: hidden;
 }
+
+/* .workflow-card:hover {
+  border-left: 5px solid var(--primary-color);
+  border-bottom: 5px solid var(--primary-color);
+
+} */
 
 /* ==== Footer ==== */
 .footer {

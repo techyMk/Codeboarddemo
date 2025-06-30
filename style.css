@@ -263,20 +263,65 @@ body.dark-mode .theme-toggle-button .dark {
   z-index: 1;
 }
 
-.head {
+.head-text h2{
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-color);
-  margin-top: -3rem;
-  margin-bottom: 8rem;
+  line-height: 2rem;
   text-align: center;
+  margin-top: -10rem;
+}
+
+.head-text p {
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.head-text p span {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bolder;
+  display: inline-block;
+  line-height: 2.5rem;
+  display: none;
+}
+
+.head-text p span.text-in {
+  display: block;
+  animation: textIn .5s ease;
+}
+
+.head-text p span.text-out {
+  animation: textOut .5s ease;
+}
+
+@keyframes textIn {
+  0% {
+    transform: translateY(100%);
+  }
+  
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes textOut {
+  0% {
+    transform: translateY(0%);
+  }
+  
+  100% {
+    transform: translateY(-100%);
+  }
+
 }
 
 .agent {
-  width: 30vw;
-  height: 30vh;
-  object-fit: contain;
-  margin-bottom: 2rem;
+  width: 40vw;
+  height: 40vh;
+  /* object-fit: contain; */
+  margin-bottom: 4rem;
 }
 
 .slider-container {
@@ -289,83 +334,11 @@ body.dark-mode .theme-toggle-button .dark {
   flex-direction: column;
 }
 
-.slide,
 .slider-container {
   /* background: none !important; */
   box-shadow: none !important;
   border-radius: 0 !important;
 }
-
-
-.slider-text {
-  margin-top: 6rem;
-  position: absolute;
-  right: -100%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  font-weight: bold;
-  white-space: nowrap;
-  color: var(--primary-color);
-  /* text-shadow: 0 0 10px rgba(0,0,0,0.2); */
-  opacity: 0;
-  filter: blur(10px);
-  animation: slideIn 3s infinite;
-}
-
-.slider-text:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.slider-text:nth-child(2) {
-  animation-delay: 4s;
-}
-
-.slider-text:nth-child(3) {
-  animation-delay: 8s;
-}
-
-@keyframes slideIn {
-  0% {
-    right: 30%;
-    opacity: 0;
-    filter: blur(10px);
-  }
-  10% {
-    opacity: 1;
-    filter: blur(0);
-  }
-  20% {
-    right: 50%;
-    transform: translate(50%, -50%);
-    opacity: 1;
-    filter: blur(0);
-  }
-  30% {
-    right: 50%;
-    transform: translate(50%, -50%);
-    opacity: 1;
-    filter: blur(0);
-  }
-  40% {
-    right: 50%;
-    transform: translate(50%, -50%);
-    opacity: 1;
-    filter: blur(0);
-  }
-  50% {
-    right: 70%;
-    opacity: 0;
-    filter: blur(10px);
-  }
-  100% {
-    right: 70%;
-    opacity: 0;
-    filter: blur(10px);
-  }
-}
-
-
 
 /* ===== Hero Section ===== */
 .hero {

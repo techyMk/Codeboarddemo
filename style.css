@@ -1230,7 +1230,7 @@ body.dark-mode .counters .risk .counter-front {
   color: white;
   font-size: 8rem;
   box-shadow: 
-    0 0 0 6px var(--bg-color),
+    0 0 0 6px var(--input-border),
     0 8px 24px rgba(0,0,0,0.15);
   transition: all 0.4s ease;
   position: relative;

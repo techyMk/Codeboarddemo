@@ -265,9 +265,9 @@ closeChatbot.addEventListener("click", () => document.body.classList.remove("sho
 function updateWorkflowImage() {
   const workflowImg = document.getElementById('workflow-image');
   if (body.classList.contains('dark-mode')) {
-    workflowImg.src = 'assets/workflow-dark.gif';
+    workflowImg.src = 'assets/workflow-dark.svg';
   } else {
-    workflowImg.src = 'assets/workflow-light.gif';
+    workflowImg.src = 'assets/workflow-light.svg';
   }
 }
 
@@ -276,3 +276,23 @@ themeToggleButton.addEventListener('click', updateWorkflowImage);
 if (savedTheme === 'dark') {
   updateWorkflowImage();
 }
+
+// Features
+let allValues = document.querySelectorAll(".value");
+
+// Start the forEach loop for displaying the values
+allValues.forEach((singleValue) => {
+  let startValue = 0;
+  let endValue = parseInt(singleValue.getAttribute("data-value"));
+  let duration = Math.floor(2000 / endValue);
+
+  // Counter for increaing the values & display
+  let counter = setInterval(function () {
+    startValue += 1;
+    singleValue.textContent = startValue;
+    // Clearing the interval
+    if (startValue == endValue) {
+      clearInterval(counter);
+    }
+  }, duration);
+});

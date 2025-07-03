@@ -296,3 +296,7 @@ allValues.forEach((singleValue) => {
     }
   }, duration);
 });
+
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });

@@ -188,14 +188,13 @@ body.dark-mode .main-nav.scrolled-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
 }
 
-.main-nav .logo {
-  font-size: 1.75rem;
-  color: var(--logo-color);
-  margin-bottom: 0;
-  font-weight: 700;
-  transition: font-size var(--transition-speed) ease-in-out;
+.main-nav img {
+  width: 14%;
+  max-width: 160px;
+  height: auto;
 }
 
 .main-nav .logo span {
@@ -242,6 +241,43 @@ body.dark-mode .theme-toggle-button .dark {
   border-color: var(--text-color);
   background-color: color-mix(in srgb, var(--text-color) 10%, transparent);
 }
+
+@media (max-width: 1024px) {
+  .main-nav img {
+    width: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 1rem 0;
+  }
+
+  .nav-container {
+    padding: 0 1.2rem;
+  }
+
+  .main-nav img {
+    width: 22%;
+    max-width: 130px;
+  }
+
+  .theme-toggle-button {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav img {
+    width: 26%;
+    max-width: 110px;
+  }
+
+  .theme-toggle-button span {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* ==== Slides Section ==== */
 
@@ -693,13 +729,14 @@ body.dark-mode .theme-toggle-button .dark {
   margin: 1rem;
   cursor: pointer;
   background-color: var(--card-bg);
-  border-bottom: 4px solid var(--primary-color);
+  /* border-bottom: 4px solid var(--primary-color); */
   border-radius: 20px;
   transition: all 0.5s;
 }
 
 .counters .counter:hover {
   box-shadow: var(--primary-color) 0px 2px 8px 0px;
+  border: 2px solid var(--primary-color);
   transform: translateY(-5px);
 }
 
@@ -793,7 +830,7 @@ body.dark-mode .theme-toggle-button .dark {
 }
 
 /* Counter Background Images */
-.counters .immediate .counter-front {
+/* .counters .immediate .counter-front {
   background-image: url(assets/feature-counter_1.png);
 }
 
@@ -807,10 +844,10 @@ body.dark-mode .theme-toggle-button .dark {
 
 .counters .risk .counter-front {
   background-image: url(assets/feature-counter_4.png);
-}
+} */
 
 /* Dark Mode Images */
-body.dark-mode .counters .immediate .counter-front {
+/* body.dark-mode .counters .immediate .counter-front {
   background-image: url(assets/feature-counter_1-dark.png);
 }
 
@@ -824,7 +861,7 @@ body.dark-mode .counters .afford .counter-front {
 
 body.dark-mode .counters .risk .counter-front {
   background-image: url(assets/feature-counter_4-dark.png);
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 620px) {

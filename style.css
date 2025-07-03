@@ -1614,7 +1614,7 @@ body.dark-mode .counters .risk .counter-front {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  animation: animate 2s linear infinite;
+  animation: animate 4s linear infinite;
 }
 
 .workflow-card:hover::before {

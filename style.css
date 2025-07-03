@@ -719,13 +719,13 @@ body.dark-mode .theme-toggle-button .dark {
 }
 
 .counter-front {
-  background-color: var(--card-bg);
+  background-color: var(--bg-color);
   background-position: left bottom;
   background-repeat: no-repeat;
 }
 
 .counter-back {
-  background-color: var(--card-bg);
+  background-color: var(--);
   transform: rotateY(180deg);
 }
 
@@ -1575,8 +1575,9 @@ body.dark-mode .counters .risk .counter-front {
 .workflow .gif {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 5px;
   object-fit: contain;
+  z-index: 10;
   /* transition: all var(--transition-speed) ease; */
 }
 
@@ -1589,7 +1590,7 @@ body.dark-mode .counters .risk .counter-front {
 .workflow-card {
   width: 100%;
   background-color: var(--card-bg);
-  padding: 1.5rem;
+  padding: 0.25rem;
   box-shadow: var(--card-shadow);
   border-radius: var(--border-radius);
   /* border-right: 5px solid var(--primary-color);
@@ -1600,6 +1601,41 @@ body.dark-mode .counters .risk .counter-front {
   gap: 1.5rem;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+}
+
+.workflow-card::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 180%;
+  background: var(--primary-color);
+  box-shadow: var(--card-shadow);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: animate 2s linear infinite;
+}
+
+.workflow-card:hover::before {
+  animation: none;
+}
+
+@keyframes animate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.workflow-container::after {
+  position: absolute;
+  content: "";
+  inset: 5px;
+  background: #222;
+  border-radius: 8px;
 }
 
 /* .workflow-card:hover {
@@ -1890,6 +1926,7 @@ html {
 
 #chatbot-toggler span {
   color: #fff;
+  font-size: 1.9rem;
   position: absolute;
 }
 

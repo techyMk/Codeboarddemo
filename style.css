@@ -1697,8 +1697,9 @@ body.dark-mode .counters .risk .counter-front {
 
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  position: relative;
 }
 
 .footer ul {
@@ -1708,6 +1709,7 @@ body.dark-mode .counters .risk .counter-front {
 }
 
 .footer-col {
+  width: 100%;
   padding: 0 1rem;
 }
 
@@ -1783,61 +1785,6 @@ body.dark-mode .counters .risk .counter-front {
 
 .footer-links li.address-line span {
   display: inline-block;
-}
-
-.footer-newsletter {
-  display: flex;
-  margin-top: 1rem;
-  position: relative;
-  overflow: visible;
-  max-width: 350px;
-  width: 100%;
-}
-
-.footer-newsletter input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--input-border);
-  outline: none;
-  border-right: none;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  min-width: 0;
-  transition: border-color var(--transition-speed) ease;
-}
-
-.footer-newsletter input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
-}
-
-.footer-newsletter .btn {
-  padding: 0 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  cursor: pointer;
-  transition:all var(--transition-speed) ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-newsletter .btn:hover {
-  background-color: var(--secondary-color);
-  transform: none;
-}
-
-.footer-newsletter.btn span {
-  font-size: 1.2rem;
-}
-
-.newsletter-text {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--footer-text);
 }
 
 .footer-divider {

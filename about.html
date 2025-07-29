@@ -1583,118 +1583,118 @@
   });
   
   // Form Submission
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+//   document.getElementById('contactForm').addEventListener('submit', function(e) {
+//   e.preventDefault();
   
-  // Reset previous errors
-  resetErrors();
+//   // Reset previous errors
+//   resetErrors();
   
-  // Get form values
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-  const message = document.getElementById('message').value.trim();
+//   // Get form values
+//   const name = document.getElementById('name').value.trim();
+//   const email = document.getElementById('email').value.trim();
+//   const subject = document.getElementById('subject').value.trim();
+//   const message = document.getElementById('message').value.trim();
   
-  // Validate form
-  let isValid = true;
+//   // Validate form
+//   let isValid = true;
   
-  if (name === '') {
-    showError('name-error', 'Name is required');
-    document.getElementById('name').classList.add('error');
-    isValid = false;
-  }
+//   if (name === '') {
+//     showError('name-error', 'Name is required');
+//     document.getElementById('name').classList.add('error');
+//     isValid = false;
+//   }
   
-  if (email === '') {
-    showError('email-error', 'Email is required');
-    document.getElementById('email').classList.add('error');
-    isValid = false;
-  } else if (!isValidEmail(email)) {
-    showError('email-error', 'Please enter a valid email');
-    document.getElementById('email').classList.add('error');
-    isValid = false;
-  }
+//   if (email === '') {
+//     showError('email-error', 'Email is required');
+//     document.getElementById('email').classList.add('error');
+//     isValid = false;
+//   } else if (!isValidEmail(email)) {
+//     showError('email-error', 'Please enter a valid email');
+//     document.getElementById('email').classList.add('error');
+//     isValid = false;
+//   }
   
-  if (message === '') {
-    showError('message-error', 'Message is required');
-    document.getElementById('message').classList.add('error');
-    isValid = false;
-  }
+//   if (message === '') {
+//     showError('message-error', 'Message is required');
+//     document.getElementById('message').classList.add('error');
+//     isValid = false;
+//   }
   
-  if (isValid) {
-    // Prepare form data
-    const formData = {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message
-    };
+//   if (isValid) {
+//     // Prepare form data
+//     const formData = {
+//       name: name,
+//       email: email,
+//       subject: subject,
+//       message: message
+//     };
     
-    // Send email (using Formspree or your preferred method)
-    sendEmail(formData);
-  }
-});
+//     // Send email (using Formspree or your preferred method)
+//     sendEmail(formData);
+//   }
+// });
 
-function resetErrors() {
-  const errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(error => {
-    error.style.display = 'none';
-  });
+// function resetErrors() {
+//   const errorMessages = document.querySelectorAll('.error-message');
+//   errorMessages.forEach(error => {
+//     error.style.display = 'none';
+//   });
   
-  const errorInputs = document.querySelectorAll('.form-control.error');
-  errorInputs.forEach(input => {
-    input.classList.remove('error');
-  });
-}
+//   const errorInputs = document.querySelectorAll('.form-control.error');
+//   errorInputs.forEach(input => {
+//     input.classList.remove('error');
+//   });
+// }
 
-function showError(id, message) {
-  const errorElement = document.getElementById(id);
-  errorElement.textContent = message;
-  errorElement.style.display = 'block';
-}
+// function showError(id, message) {
+//   const errorElement = document.getElementById(id);
+//   errorElement.textContent = message;
+//   errorElement.style.display = 'block';
+// }
 
-function isValidEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
+// function isValidEmail(email) {
+//   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return re.test(email);
+// }
 
-// Using Formspree.io for email submission (free service)
-function sendEmail(formData) {
-  const formspreeEndpoint = 'https://formspree.io/f/your-form-id'; // Replace with your Formspree ID
+// // Using Formspree.io for email submission (free service)
+// function sendEmail(formData) {
+//   const formspreeEndpoint = 'https://formspree.io/f/your-form-id'; // Replace with your Formspree ID
   
-  fetch(formspreeEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      _replyto: formData.email, // This ensures replies go to the sender
-      _subject: formData.subject || 'New Contact Form Submission',
-      _to: 'kk@embsysai.com' // Your target email address
-    }),
-  })
-  .then(response => {
-    if (response.ok) {
-      // Show success message
-      document.getElementById('form-success').style.display = 'block';
-      // Reset form
-      document.getElementById('contactForm').reset();
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        document.getElementById('form-success').style.display = 'none';
-      }, 5000);
-    } else {
-      throw new Error('Network response was not ok');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was a problem sending your message. Please try again later.');
-  });
-}
+//   fetch(formspreeEndpoint, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       name: formData.name,
+//       email: formData.email,
+//       subject: formData.subject,
+//       message: formData.message,
+//       _replyto: formData.email, // This ensures replies go to the sender
+//       _subject: formData.subject || 'New Contact Form Submission',
+//       _to: 'kk@embsysai.com' // Your target email address
+//     }),
+//   })
+//   .then(response => {
+//     if (response.ok) {
+//       // Show success message
+//       document.getElementById('form-success').style.display = 'block';
+//       // Reset form
+//       document.getElementById('contactForm').reset();
+//       // Hide success message after 5 seconds
+//       setTimeout(() => {
+//         document.getElementById('form-success').style.display = 'none';
+//       }, 5000);
+//     } else {
+//       throw new Error('Network response was not ok');
+//     }
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//     alert('There was a problem sending your message. Please try again later.');
+//   });
+// }
   
   // Scroll Animation
   function animateOnScroll() {

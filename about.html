@@ -805,6 +805,23 @@
     .contact button:hover {
         background-color: #63b3ed;
     }
+
+    .error-message {
+  color: #ff3860;
+  font-size: 0.8em;
+  margin-top: 5px;
+  display: none;
+}
+
+.success-message {
+  color: #28a745;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.form-control.error {
+  border-color: #ff3860;
+}
     
     .form-group {
       margin-bottom: 1.5rem;
@@ -828,7 +845,7 @@
     
     textarea.form-control {
       min-height: 150px;
-      resize: vertical;
+      resize: none;
     }
     
     .contact-right {
@@ -1383,7 +1400,7 @@
       <!-- End of Testimonial Section -->
 
       <!-- Contact Section -->
-      <section class="contact" id="contact">
+      <!-- <section class="contact" id="contact">
         <div class="container">
           <div class="title">
             <h2 class="animate fade-in">Contact Us</h2>
@@ -1414,7 +1431,42 @@
 
           </div>
         </div>
-      </section>
+      </section> -->
+      <section class="contact" id="contact">
+  <div class="container">
+    <div class="title">
+      <h2 class="animate fade-in">Contact Us</h2>
+      <p class="text animate fade-in delay-1">Reach out to us-we're here to assist you with any questions, feedback, or support.</p>
+    </div>
+
+    <div class="row">
+      <div class="contact-left animate slide-left">
+        <h2>Send Message Here</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+            <div class="error-message" id="name-error"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            <div class="error-message" id="email-error"></div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="6" required></textarea>
+            <div class="error-message" id="message-error"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="form-success" class="success-message" style="display:none;">
+            Thank you for your message! We'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
       <!-- End of Contact Section -->
 
       <!-- Footer -->
@@ -1563,11 +1615,123 @@
   });
   
   // Form Submission
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    this.reset();
+//   document.getElementById('contactForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     alert('Thank you for your message! We will get back to you soon.');
+//     this.reset();
+//   });
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Reset previous errors
+  resetErrors();
+  
+  // Get form values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+  
+  // Validate form
+  let isValid = true;
+  
+  if (name === '') {
+    showError('name-error', 'Name is required');
+    document.getElementById('name').classList.add('error');
+    isValid = false;
+  }
+  
+  if (email === '') {
+    showError('email-error', 'Email is required');
+    document.getElementById('email').classList.add('error');
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    showError('email-error', 'Please enter a valid email');
+    document.getElementById('email').classList.add('error');
+    isValid = false;
+  }
+  
+  if (message === '') {
+    showError('message-error', 'Message is required');
+    document.getElementById('message').classList.add('error');
+    isValid = false;
+  }
+  
+  if (isValid) {
+    // Prepare form data
+    const formData = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message
+    };
+    
+    // Send email (using Formspree or your preferred method)
+    sendEmail(formData);
+  }
+});
+
+function resetErrors() {
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(error => {
+    error.style.display = 'none';
   });
+  
+  const errorInputs = document.querySelectorAll('.form-control.error');
+  errorInputs.forEach(input => {
+    input.classList.remove('error');
+  });
+}
+
+function showError(id, message) {
+  const errorElement = document.getElementById(id);
+  errorElement.textContent = message;
+  errorElement.style.display = 'block';
+}
+
+function isValidEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+// Using Formspree.io for email submission (free service)
+function sendEmail(formData) {
+  const formspreeEndpoint = 'https://formspree.io/f/xgvzyqlg'; 
+  
+  fetch(formspreeEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      _replyto: formData.email, 
+      _subject: formData.subject || 'New Contact Form Submission',
+      _to: 'kk@embsysai.com' 
+    }),
+  })
+  .then(response => {
+    if (response.ok) {
+      // Show success message
+      document.getElementById('form-success').style.display = 'block';
+      // Reset form
+      document.getElementById('contactForm').reset();
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        document.getElementById('form-success').style.display = 'none';
+      }, 5000);
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was a problem sending your message. Please try again later.');
+  });
+}
   
   // Scroll Animation
   function animateOnScroll() {

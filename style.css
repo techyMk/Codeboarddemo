@@ -2069,6 +2069,13 @@ html {
     margin-bottom: 1rem;
     display: block;
   }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
